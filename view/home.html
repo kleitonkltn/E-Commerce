@@ -1,0 +1,15 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Home|</h1>
+
+    </div>
+</div>
+<div>
+    <p>Bem vindo ao meu E-commerce</p>
+</div>
+
+<p ng-repeat="cat in categorias">
+    <a class="btn btn-link"  href="#!categoryProducts/{{cat.id}}">{{cat.description}}</a>
+</p>
+
+
