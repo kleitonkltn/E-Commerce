@@ -10,5 +10,9 @@ angular.module("Ecommerce").config(["$routeProvider", function ($routeProvider) 
         templateUrl: "view/categoryProducts.html",
         controller: "productsController"
     });
+    $routeProvider.when("/products/:idProduto", {
+        templateUrl: "view/detalhe.html",
+        controller: "detalheController"
+    });
 
 }]);

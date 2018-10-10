@@ -1,0 +1,68 @@
+<div class="container">
+
+
+    <h1 class="my-4">{{produto.category.description}}|
+        <small>{{produto.description}}</small>
+    </h1>
+
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <img class="img-fluid" src="data:image/png;base64,{{produto.img}}" alt="">
+        </div>
+        <div class="col-md-5">
+            <div class="card h-70">
+                <h4 class="card-header">{{produto.description}}</h4>
+                <div class="card-body">
+                    <p><b>Marca:</b> {{produto.brand}}</p>
+                    <p><b>Categoria:</b> {{produto.category.description}}</p>
+                    <p><b>Quantidade:</b> {{produto.quantity}}</p>
+
+
+                <div class="input-group">
+                    <input class="form-control col-md-5" type="number" value="1" min="1" max="{{produto.quantity}}"/>
+                    <a class="btn btn-success"> Comprar</a>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Related Projects Row -->
+
+
+    <!--<div class="row">-->
+
+    <!--<div class="col-md-3 col-sm-6 mb-4">-->
+    <!--<a href="#">-->
+    <!--<img class="img-fluid" src="http://placehold.it/500x300" alt="">-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="col-md-3 col-sm-6 mb-4">-->
+    <!--<a href="#">-->
+    <!--<img class="img-fluid" src="http://placehold.it/500x300" alt="">-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="col-md-3 col-sm-6 mb-4">-->
+    <!--<a href="#">-->
+    <!--<img class="img-fluid" src="http://placehold.it/500x300" alt="">-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="col-md-3 col-sm-6 mb-4">-->
+    <!--<a href="#">-->
+    <!--<img class="img-fluid" src="http://placehold.it/500x300" alt="">-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--</div>-->
+
+
+</div>

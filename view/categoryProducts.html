@@ -1,27 +1,29 @@
-<h2>Produtos da Categoria: {{categoria.description}}</h2>
+<h2>Produtos da Categoria|<span class="text text-black-50"> {{categoria.description}}</span></h2>
 <div class="album py-5 bg-light">
     <div class="container">
 
         <div class="row">
-            <div class="col-md-4" ng-repeat="prod in produtos">
+            <div class="col-md-3" ng-repeat="prod in produtos">
                 <div class="card mb-4 shadow-sm">
                     <img class="card-img-top flex-md-column-reverse"
                          src="data:image/png;base64,{{prod.img}}"/>
 
                     <div class="card-body">
-                        <p class="card-text">{{prod.description}}</p>
+                        <b class="card-text">{{prod.description}}</b>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-success ">Visualizar</button>
-                                <button type="button" class="btn btn-primary">Add Carrinho</button>
+                                <a class="btn btn-success" href="#!products/{{prod.id}}">Visualizar</a>
+                                <a class="btn btn-primary ">Add Carrinho</a>
                             </div>
 
 
                         </div>
-                        <h6 class="card-title pricing-card-title">R$<span style="text-decoration: line-through;">{{prod.price}}</span></h6>
-                        <p>por:</p>
-                        <h3 class="card-title pricing-card-title">R$ {{prod.promotionalPrice}} </h3>
+                        <div class="card-group  ">
+                            <!--R$<span style="text-decoration: line-through;">{{prod.price}}</span>-->
+
+                            <h2 class="text-center"> R$ {{prod.promotionalPrice}} </h2>
+                        </div>
                     </div>
                 </div>
             </div>
