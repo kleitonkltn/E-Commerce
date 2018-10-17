@@ -19,16 +19,34 @@
                     <p><b>Categoria:</b> {{produto.category.description}}</p>
                     <p><b>Quantidade:</b> {{produto.quantity}}</p>
 
+                    <form>
+                        <div class="input-group">
 
-                <div class="input-group">
-                    <input class="form-control col-md-5" type="number" value="1" min="1" max="{{produto.quantity}}"/>
-                    <a class="btn btn-success"> Comprar</a>
-                </div>
 
+                            <input class="form-control col-md-5" ng-model="product.qtd" type="number" value="1" min="1"
+                                   max="{{produto.quantity}}"/>
+
+                            <button class="btn btn-success" ng-click="addCarrinho(produto,product.qtd)">
+                                Comprar
+                            </button>
+                        </div>
+
+
+                        <div class="{{classAlert}}" style="margin-top:20px" ng-show="mostrar">
+                            {{textAlert}}
+                        </div>
+
+
+                    </form>
                 </div>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="card h-50">
+                <h4 class="card-header">Detalhes</h4>
 
+            </div>
+        </div>
 
     </div>
     <!-- /.row -->

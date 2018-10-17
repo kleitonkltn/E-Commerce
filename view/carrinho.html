@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="my-4">Carrinho|
+        <small>Pedido</small>
+    </h1>
+
+    <table class="table col-sm-12">
+
+
+        <thead class="thead-light col-lg-12">
+        <tr>
+            <th>Foto</th>
+            <th>Descrição</th>
+            <th>QTD</th>
+            <th>Valor Un.</th>
+            <th>Valor Total</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="car in carrinho">
+            <td width="90dp" height="90dp"><img class="img-fluid" src="data:image/png;base64,{{car.img}}" alt=""></td>
+            <td>{{car.description}}</td>
+            <td>{{car.quantity}}</td>
+            <td>{{car.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</td>
+            <td>{{(car.price*car.quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</td>
+            <td><form><button class="btn btn-danger" ng-click="removerProduto(car.id)">Remover</button></form></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
+<h1>Total: {{total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</h1>
+
+</div>
