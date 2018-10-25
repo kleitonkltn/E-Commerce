@@ -2,7 +2,6 @@ angular.module("Ecommerce").factory("CarrinhoService", function () {
     var carrinho = [];
 
     var _addProduto = function (produto, qtde) {
-
         product = JSON.parse(JSON.stringify(produto));
         for (var i in carrinho) {
             if (carrinho[i].id === product.id) {

@@ -1,7 +1,9 @@
 <h2>Produtos da Categoria|<span class="text text-black-50"> {{categoria.description}}</span></h2>
 <div class="album py-5 bg-light">
     <div class="container">
-
+        <div class="{{classAlert}}" style="margin-top:20px" ng-show="mostrar">
+            {{textAlert}}
+        </div>
         <div class="row">
             <div class="col-lg-3" ng-repeat="prod in produtos">
                 <div class="card mb-4 shadow-sm">
@@ -10,20 +12,25 @@
                     <div class="card-body">
                         <b class="card-text">{{prod.description}}</b>
 
-                        <div class="btn-group-sm">
+                        <div style="margin-left: -10px" class="input-group-append">
 
                             <a class="btn btn-success" href="#!products/{{prod.id}}">Visualizar</a>
-                            <a class="btn btn-primary">Add Carrinho</a>
+                            <form class="align-self-xl-center">
 
+
+                                <button style="margin-left: 2px" class="btn btn-primary" ng-click="addCarrinho(prod)">
+                                    Add Carrinho
+                                </button>
+
+                            </form>
                         </div>
 
 
-                        <div class="card-group  ">
+                        <h2 class="text-center" style="margin-top: 20px">{{prod.promotionalPrice.toLocaleString('pt-br',{style: 'currency',
+                            currency: 'BRL'})}} </h2>
 
-                            <h2 class="text-center">{{prod.promotionalPrice.toLocaleString('pt-br',{style: 'currency',
-                                currency: 'BRL'})}} </h2>
-                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
