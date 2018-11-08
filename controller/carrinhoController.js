@@ -1,5 +1,5 @@
 angular.module("Ecommerce").controller("carrinhoController", function ($scope, CarrinhoService) {
-    $scope.total = 0;
+
     var carregarCarrinho = function () {
         carrinho = localStorage.getItem("carrinho");
         if (!carrinho) {
@@ -23,6 +23,7 @@ angular.module("Ecommerce").controller("carrinhoController", function ($scope, C
         $scope.total = 0;
         for (const i in vet) {
             $scope.total = (vet[i].quantity * vet[i].price) + $scope.total;
+            $scope.total = ($scope.total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))
         }
 
     };

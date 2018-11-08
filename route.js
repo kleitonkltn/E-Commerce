@@ -18,5 +18,9 @@ angular.module("Ecommerce").config(["$routeProvider", function ($routeProvider) 
         templateUrl: "view/carrinho.html",
         controller: "carrinhoController"
     });
+    $routeProvider.when("/login", {
+        templateUrl: "view/login.html",
+        controller: "loginController"
+    });
 
 }]);
