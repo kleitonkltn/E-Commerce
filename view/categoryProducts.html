@@ -11,22 +11,24 @@
 
                     <div class="card-body">
                         <b class="card-text">{{prod.description}}</b>
+                        <div class="form-row ">
+                            <div style="margin-left: -10px" class="btn-group col-md-10">
 
-                        <div style="margin-left: -10px" class="input-group-append">
-
-                            <a class="btn btn-success" href="#!products/{{prod.id}}">Visualizar</a>
-                            <form class="align-self-xl-center">
+                                <a class="btn btn-success" href="#!products/{{prod.id}}">Visualizar</a>
+                                <form class="align-self-xl-center">
 
 
-                                <button style="margin-left: 2px" class="btn btn-primary" ng-click="addCarrinho(prod)">
-                                    Add Carrinho
-                                </button>
+                                    <button style="margin-left: 2px" class="btn btn-primary"
+                                            ng-click="addCarrinho(prod)">
+                                        Add Carrinho
+                                    </button>
 
-                            </form>
+                                </form>
+                            </div>
                         </div>
 
-
-                        <h2 class="text-center" style="margin-top: 20px">{{prod.promotionalPrice.toLocaleString('pt-br',{style: 'currency',
+                        <h2 class="text-center" style="margin-top: 20px">
+                            {{prod.promotionalPrice.toLocaleString('pt-br',{style: 'currency',
                             currency: 'BRL'})}} </h2>
 
                     </div>

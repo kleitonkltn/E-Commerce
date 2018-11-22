@@ -22,5 +22,13 @@ angular.module("Ecommerce").config(["$routeProvider", function ($routeProvider) 
         templateUrl: "view/login.html",
         controller: "loginController"
     });
+    $routeProvider.when("/cadProdutos", {
+        templateUrl: "view/cadProdutos.html",
+        controller: "cadProdutosController"
+    });
+    $routeProvider.when("/cadCategorias", {
+        templateUrl: "view/cadCategorias.html",
+        controller: "cadCategoriasController"
+    });
 
 }]);

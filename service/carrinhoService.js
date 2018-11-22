@@ -32,6 +32,7 @@ angular.module("Ecommerce").factory("CarrinhoService", function () {
             } else {
                 _limparCarrinho();
             }
+
         }
     };
 

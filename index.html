@@ -13,6 +13,7 @@
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="node_modules/angular-loading-bar/build/loading-bar.min.js"></script>
     <script src="app.js"></script>
+    <script src="node_modules/angular-base64-upload/src/angular-base64-upload.js"></script>
     <script src="route.js"></script>
 
     <script src="service/categoryService.js"></script>
@@ -20,7 +21,10 @@
     <script src="service/carrinhoService.js"></script>
     <script src="service/loginService.js"></script>
 
+
     <script src="controller/loginController.js"></script>
+    <script src="controller/cadCategoriasController.js"></script>
+    <script src="controller/cadProdutosController.js"></script>
     <script src="controller/homeController.js"></script>
     <script src="controller/menuController.js"></script>
     <script src="controller/productsController.js"></script>
@@ -55,17 +59,27 @@
                             Clientes
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <span data-feather="bar-chart-2"></span>
-                            Relatórios
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="chevron-down"></span>
+
                             Categorias
                         </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                           data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <span data-feather="chevron-doswn"></span>
+                            Cadastrar
+                        </a>
+                        <div class="dropdown-menu ">
+
+                            <a class="dropdown-item" href="#!listCategorias">Listar</a>
+                            <a class="dropdown-item" href="#!cadCategorias">Cadastrar</a>
+
+                        </div>
+
                     </li>
                 </ul>
 

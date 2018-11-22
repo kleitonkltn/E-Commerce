@@ -19,13 +19,14 @@ angular.module("Ecommerce").controller("carrinhoController", function ($scope, C
     };
     carregarCarrinho();
     var somarCarrinho = function () {
-        var vet = JSON.parse(carrinho);
-        $scope.total = 0;
-        for (const i in vet) {
-            $scope.total = (vet[i].quantity * vet[i].price) + $scope.total;
-            $scope.total = ($scope.total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}))
+        if (carrinho.length >0) {
+            var vet = JSON.parse(carrinho);
+            $scope.total = 0;
+            for (const i in vet) {
+                $scope.total = (vet[i].quantity * vet[i].price) + $scope.total;
+                $scope.total = ($scope.total.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'}))
+            }
         }
-
     };
     $scope.removerProduto = function (id) {
 

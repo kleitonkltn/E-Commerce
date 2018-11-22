@@ -1,4 +1,25 @@
-angular.module("Ecommerce").controller("menuController", function ($scope, $http, categoryService, loginService) {
+angular.module("Ecommerce").controller("menuController", function ($scope, $http, categoryService, loginService, $location) {
+    var statusLogin = function () {
+        if (loginService.logado() == true) {
+            $scope.btLogout = true;
+            $scope.btLogin = false;
+
+        } else {
+            $scope.btLogin = true;
+            $scope.btLogout = false;
+
+        }
+
+    };
+    statusLogin();
+    var funcao = function () {
+        if (loginService.funcao() == "ADMINISTRATOR") {
+            $scope.acesso = true;
+        }
+
+    };
+    funcao();
+
 
     var carregarCategorias = function () {
         categoryService.listarCategorias()
@@ -8,42 +29,15 @@ angular.module("Ecommerce").controller("menuController", function ($scope, $http
             })
 
     };
-    carregarCategorias();
-    // var verificarAcesso = function () {
-    //     loginService._logado()
-    //         .then(function (response) {
-    //             alert(response);
-    //         })
-    // };
-    // verificarAcesso();
 
-    // if (localStorage.getItem("user") != null && localStorage.getItem("token") != null) {
-    //
-    //     user = localStorage.getItem("user");
-    //     user = JSON.parse(user);
-    //     nivelAcesso = user.personRole;
-    //     if (nivelAcesso == "ADMINISTRATOR") {
-    //         $scope.acesso = true;
-    //     } else {
-    //         $scope.acesso = false;
-    //     }
-    // }
+    $scope.logout = function () {
+        loginService.logout();
+        location.reload(menubar);
+        $location.url("/home")
+    };
 
-    // verificarAcesso();
-    // var verificarLogin = function () {
-    //     if (localStorage.getItem("token") != null) {
-    //         alert("false");
-    //         $scope.logout = true;
-    //         $scope.login = false;
-    //     } else {
-    //         alert("true");
-    //         $scope.login = true;
-    //         $scope.logout = false;
-    //
-    //     }
-    //
-    // };
-    // verificarLogin();
+
+    carregarCategorias()
 
 
 })

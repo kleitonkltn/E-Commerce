@@ -16,7 +16,9 @@ angular.module("Ecommerce").controller("loginController", function ($scope, $htt
                 $scope.dateUser = response.data;
                 localStorage.setItem("token", JSON.stringify($scope.dateUser.token));
                 localStorage.setItem("user", JSON.stringify($scope.dateUser));
+                location.reload(menu.html)
                 $location.url("/carrinho")
+
             }).catch(function (response) {
             alert("Usuario ou Senha Incorreto")
         });

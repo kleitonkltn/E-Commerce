@@ -1,0 +1,85 @@
+<h2>Produtos da Categoria|<span class="text text-black-50"> {{categoria.description}}</span></h2>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="{{classAlert}}" style="margin-top:20px" ng-show="mostrar">
+            {{textAlert}}
+        </div>
+        <div class="row">
+            <div class="col-lg-3" ng-repeat="prod in productsAll">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top flex-md-column-reverse" src="data:image/png;base64,{{prod.img}}"/>
+
+                    <div class="card-body">
+                        <b class="card-text">{{prod.description}}</b>
+
+
+                        <h2 class="text-center" style="margin-top: 20px">
+                            {{prod.promotionalPrice.toLocaleString('pt-br',{style: 'currency',
+                            currency: 'BRL'})}} </h2>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 style="text-align: center;color: black">Cadastro de Produtos</h3>
+
+<form class="form-row input-group">
+
+
+    <div class="form-group col-md-8">
+        <label>Descrição</label>
+        <textarea title="" class="form-control" ng-model="newProduto.description" required maxlength="255"></textarea>
+    </div>
+    <div class="form-group col-md-4">
+        <label>Marca</label>
+        <input title="" class="form-control" ng-model="newProduto.brand" required maxlength="255"/>
+    </div>
+    <div class="form-group col-md-4 ">
+        <label>Categoria</label>
+        <select title="" name="categoria" ng-model="newProduto.category.id" class="form-control">
+            <option ng-repeat="cat in listCategorias" value="{{cat.id}}" selected>{{cat.description}}</option>
+
+        </select>
+
+
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Valor</label>
+        <input required title="" type="text" class="form-control" name="valor" ng-model="newProduto.price" max="999"
+               min="5"
+               maxlength="7">
+    </div>
+    <div class="form-group col-md-3">
+        <label>Valor em Oferta</label>
+        <input required title="" type="text" class="form-control" min="5" max="999"
+               ng-model="newProduto.promotionalPrice"
+               maxlength="7">
+    </div>
+
+    <div class="form-group col-md-2">
+        <label> Estoque </label>
+        <input required title="" type="number" class="form-control" min="1" ng-model="newProduto.quantity"
+        >
+    </div>
+
+
+    <div class="form-group col-md-4">
+        <label> Imagem </label>
+        <input required type="file" class="form-control" accept="image" ng-model="newProduto.img" base-sixty-four-input>
+    </div>
+
+
+    <div class="form-group col-md-12	"></div>
+    <div class="form-group col-md-12	">
+        <button class="btn btn-danger col-lg-3" type="button">Cancelar</button>
+        <button class="btn btn-success float-right col-lg-3" type="button" ng-click="cadastrarProduto(newProduto)">
+            Salvar
+        </button>
+    </div>
+
+</form>

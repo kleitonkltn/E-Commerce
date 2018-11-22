@@ -14,12 +14,22 @@ angular.module("Ecommerce").factory("loginService", function ($http) {
 
 
     var _logado = function () {
-        if (localStorage.getItem("token")) {
+        if ((!!localStorage.getItem("token")) &&((!!localStorage.getItem("user")))) {
             return true;
-        } else {
-            return false;
+        }
+        return false;
+    };
+    var _funcao = function () {
+        if (_logado() == true){
+            var obj = localStorage.getItem("user");
+            var cargo = JSON.parse(obj);
+            return cargo.personRole;
+
         }
     };
+
+
+
     var _logout = function () {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
@@ -34,8 +44,9 @@ angular.module("Ecommerce").factory("loginService", function ($http) {
     return {
 
         _login: _login,
-        _logado: _logado,
-        _logout: _logout,
+        logado: _logado,
+        logout: _logout,
+        funcao:_funcao,
         _signup: _signup
     };
 
