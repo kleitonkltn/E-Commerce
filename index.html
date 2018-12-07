@@ -20,9 +20,13 @@
     <script src="service/productService.js"></script>
     <script src="service/carrinhoService.js"></script>
     <script src="service/loginService.js"></script>
+    <script src="service/comprasService.js"></script>
 
 
     <script src="controller/loginController.js"></script>
+    <script src="controller/listarComprasController.js"></script>
+    <script src="controller/listarCategoriasController.js"></script>
+    <script src="controller/listarProdutosController.js"></script>
     <script src="controller/cadCategoriasController.js"></script>
     <script src="controller/cadProdutosController.js"></script>
     <script src="controller/homeController.js"></script>
@@ -41,46 +45,15 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#!carrinho">
-                            <span data-feather="file"></span>
-                            Carrinho
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="shopping-cart"></span>
-                            Produtos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="users"></span>
-                            Clientes
-                        </a>
+                    <li class="nav-item" ng-controller="cadCategoriasController">
+
+                        <p ng-repeat="cat in listCategorias">
+
+                            <a class="nav-item" href="#!categoryProducts/{{cat.id}}"><span data-feather="arrow-right"></span>{{cat.description}}</a>
+                        </p>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
 
-                            Categorias
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <span data-feather="chevron-doswn"></span>
-                            Cadastrar
-                        </a>
-                        <div class="dropdown-menu ">
-
-                            <a class="dropdown-item" href="#!listCategorias">Listar</a>
-                            <a class="dropdown-item" href="#!cadCategorias">Cadastrar</a>
-
-                        </div>
-
-                    </li>
                 </ul>
 
 

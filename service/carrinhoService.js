@@ -3,9 +3,11 @@ angular.module("Ecommerce").factory("CarrinhoService", function () {
 
     var _addProduto = function (produto, qtde) {
         product = JSON.parse(JSON.stringify(produto));
+        product.quantity = qtde;
+        product.qtde = qtde;
         for (var i in carrinho) {
             if (carrinho[i].id === product.id) {
-                carrinho[i].quantity = carrinho[i].quantity + qtde;
+                carrinho[i].qtde = carrinho[i].qtde + qtde;
                 localStorage.setItem("carrinho", JSON.stringify(carrinho));
                 return;
             }
@@ -13,7 +15,6 @@ angular.module("Ecommerce").factory("CarrinhoService", function () {
 
         }
         product.quantity = qtde;
-        carrinho = _listarProdutos();
         carrinho.push(product);
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
 

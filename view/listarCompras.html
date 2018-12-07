@@ -1,0 +1,82 @@
+<h1 class="my-4">Minhas Compras
+
+</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">DATA</th>
+        <th scope="col">AÇÕES</th>
+
+    </tr>
+    </thead>
+    <tbody ng-repeat="compras in listCompras">
+    <tr>
+
+        <td>{{compras.id}}</td>
+        <td>{{(compras.orderDate)}}</td>
+
+        <td>
+            <div class="form-group">
+
+
+                <button type="button" class="btn btn-primary" ng-click="carregarDetalheCompras(compras.id)" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    Visualizar
+                </button>
+
+            </div>
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table col-sm-12">
+
+
+                    <thead class="thead-light col-lg-12">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Descrição</th>
+                        <th>QTD</th>
+                        <th>Valor Un.</th>
+                        <th>Valor Total</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="detalheCompra in detalheCompras">
+                        <td width="90dp" height="90dp"><img class="img-fluid"
+                                                            src="data:image/png;base64,{{detalheCompra.product.img}}" alt="">
+                        </td>
+                        <td>{{detalheCompra.product.description}}</td>
+                        <td>{{detalheCompra.qtde}}</td>
+                        <td>{{detalheCompra.product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</td>
+                        <td>{{(detalheCompra.price*detalheCompra.qtde).toLocaleString('pt-br',{style: 'currency',
+                            currency: 'BRL'})}}
+                        </td>
+
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

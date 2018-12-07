@@ -30,5 +30,17 @@ angular.module("Ecommerce").config(["$routeProvider", function ($routeProvider) 
         templateUrl: "view/cadCategorias.html",
         controller: "cadCategoriasController"
     });
+    $routeProvider.when("/listCategorias", {
+        templateUrl: "view/listarCategorias.html",
+        controller: "listarCategorias"
+    });
+    $routeProvider.when("/listProdutos", {
+        templateUrl: "view/listarCategorias.html",
+        controller: "listarProdutos"
+    });
+    $routeProvider.when("/minhasCompras", {
+        templateUrl: "view/listarCompras.html",
+        controller: "comprasController"
+    });
 
 }]);

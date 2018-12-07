@@ -7,9 +7,10 @@
 <div>
     <p>Bem vindo ao meu E-commerce</p>
 </div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
-<p ng-repeat="cat in categorias">
-    <a class="btn btn-link"  href="#!categoryProducts/{{cat.id}}">{{cat.description}}</a>
-</p>
-
-
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

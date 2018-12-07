@@ -1,0 +1,27 @@
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Ação</th>
+
+    </tr>
+    </thead>
+    <tbody ng-repeat="cat in categorias">
+    <tr>
+
+        <td>{{cat.description}}</td>
+
+        <td>
+            <div class="form-group">
+                <a class="btn btn-primary text-white">Alterar</a>
+                <a class="btn btn-danger text-white">Excluir</a>
+            </div>
+        </td>
+
+    </tr>
+
+    </tbody>
+</table>
+<a class="btn btn-success btn-block" href="#!cadCategorias">Cadastrar</a>
+

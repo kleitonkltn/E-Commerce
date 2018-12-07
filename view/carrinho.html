@@ -1,6 +1,9 @@
 <div class="container">
-    <h1 class="my-4">Carrinho|
-        <small>Pedido</small>
+    <h1 class="my-4" ng-show="textH1Carrinho">Carrinho|
+        <small >Pedido</small>
+    </h1>
+    <h1 class="my-4" ng-show="textH1FinCompra">Finalizar Compra|
+        <small >Dados</small>
     </h1>
 
     <table class="table col-sm-12">
@@ -13,7 +16,7 @@
             <th>QTD</th>
             <th>Valor Un.</th>
             <th>Valor Total</th>
-            <th>Ação</th>
+            <th ng-show="btremover">Ação</th>
         </tr>
         </thead>
         <tbody>
@@ -23,13 +26,20 @@
             <td>{{car.quantity}}</td>
             <td>{{car.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</td>
             <td>{{(car.price*car.quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</td>
-            <td><form><button class="btn btn-danger" ng-click="removerProduto(car.id)">Remover</button></form></td>
+            <td ng-show="btremover">
+                <form>
+                    <button class="btn btn-danger" ng-click="removerProduto(car.id)">Remover</button>
+                </form>
+            </td>
         </tr>
 
 
         </tbody>
     </table>
 
-<h1>Total: {{total}}</h1>
-
+    <h1>Total: {{total}}</h1>
+    <form>
+        <button class="btn btn-primary float-right" ng-click="finalizarCompra()" ng-show="btfinalizarCompra">Finalizar Compra</button>
+        <button class="btn btn-success  btn-block " ng-click="novaVenda()" ng-show="btConfirmarVenda">Confirmar</button>
+    </form>
 </div>
